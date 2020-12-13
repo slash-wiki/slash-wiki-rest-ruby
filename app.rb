@@ -3,6 +3,7 @@ require 'sinatra/base'
 class Slash < Sinatra::Base
   post "/" do
     status 200
+    content_type 'application/json'
     body JSON[response_type: 'in_channel', text: "Hello #{params[:user_id]}, the date and time is #{Time.new}."]
   end
 end
